@@ -1,28 +1,31 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import './src/assets/styles/global.css';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+// ? Screens Pages
+import SignUpScreen from './src/presentation/views/sign-up/SignUpScreen';
+import HomeScreen from './src/presentation/views/home/HomeScreen';
+import ProfileScreen from './src/presentation/views/profile/ProfileScreen';
 
+export type RootStackParamsList = {
+  SignUpScreen: undefined;
+  LoginScreen: undefined;
+  HomeScreen: undefined;
+  ProfileScreen: undefined;
+};
+
+// ? Navigation
+const Stack = createNativeStackNavigator<RootStackParamsList>();
+
+export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
