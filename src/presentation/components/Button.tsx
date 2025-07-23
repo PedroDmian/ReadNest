@@ -2,74 +2,90 @@ import {
   Text,
   TouchableOpacity,
   View
-} from "react-native";
+} from 'react-native';
 
-interface Props {
-  title: string;
-  icon?: any;
-  onPress: () => void;
-  style?: 'dark' | 'light' | 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'link' | 'disabled';
-}
+import { IButtonProps } from '../../domain/models/shared/IButton';
 
 const Button = ({
   title,
   icon,
   onPress,
-  style
-}: Props) => {
+  styleType,
+  classNameTouch,
+  element,
+  activeOpacity = 0.7
+}: IButtonProps) => {
   const buttonStyles = {
     dark: {
-      touch: 'py-5 px-5 bg-dark',
-      text: 'text-white'
+      touch: 'bg-dark',
+      text: 'text-white',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     light: {
-      touch: 'py-5 px-5 bg-white',
-      text: 'text-dark'
+      touch: 'bg-white',
+      text: 'text-dark',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     primary: {
-      touch: 'py-5 px-5 bg-blue-500',
-      text: 'text-white'
+      touch: 'bg-yellow',
+      text: 'text-white',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     secondary: {
-      touch: 'py-5 px-5 bg-gray-500',
-      text: 'text-white'
+      touch: 'bg-gray-500',
+      text: 'text-white',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     danger: {
-      touch: 'py-5 px-5 bg-red-500',
-      text: 'text-white'
+      touch: 'bg-red-500',
+      text: 'text-white',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     success: {
-      touch: 'py-5 px-5 bg-green-500',
-      text: 'text-white'
+      touch: 'bg-green-500',
+      text: 'text-white',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     warning: {
-      touch: 'py-5 px-5 bg-yellow-500',
-      text: 'text-black'
+      touch: 'bg-yellow-500',
+      text: 'text-black',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     info: {
-      touch: 'py-5 px-5 bg-cyan-500',
-      text: 'text-white'
+      touch: 'bg-cyan-500',
+      text: 'text-white',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     },
     link: {
       touch: 'bg-transparent',
-      text: 'text-dark'
+      text: 'text-dark',
+      classNameTouch: classNameTouch ?? ''
     },
     disabled: {
       touch: 'py-5 px-5 bg-gray-300',
-      text: 'text-gray-500'
+      text: 'text-gray-500',
+      classNameTouch: classNameTouch ?? ''
+    },
+    trasparent: {
+      touch: 'bg-transparent',
+      text: 'text-dark',
+      classNameTouch: classNameTouch ?? ''
     }
   }
 
-  const buttonStyle = buttonStyles[style || 'dark'].touch;
-  const textStyle = buttonStyles[style || 'dark'].text
+  const buttonStyle = buttonStyles[styleType || 'dark'].touch;
+  const textStyle = buttonStyles[styleType || 'dark'].text
+  const classNameTouchStyle = buttonStyles[styleType || 'dark'].classNameTouch;
 
   return (
-    <TouchableOpacity className={`${ buttonStyle } rounded-2xl`} onPress={onPress}>
+    <TouchableOpacity activeOpacity={activeOpacity} className={`${ buttonStyle } rounded-2xl ${classNameTouchStyle ?? ''}`} onPress={onPress}>
       <View className="flex flex-row justify-center items-center gap-2">
         {icon && <>{icon}</>}
 
-        <Text className={`${textStyle} text-center font-monaBold tracking-wide text-base`}>{title}</Text>
+        { title && <Text className={`${textStyle} text-center font-monaBold tracking-wide text-base`}>{title}</Text> }
       </View>
+
+      {element && <View className='relative justify-center w-full items-center'>{element}</View>}
     </TouchableOpacity>
   );
 }

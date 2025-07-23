@@ -10,7 +10,7 @@ import {
 
 import { INavigationProps } from '../../../domain/models/INavigation';
 
-const ProfileScreen = ({ navigation, route }: INavigationProps) => {
+const FavoriteScreen = ({ navigation, route }: INavigationProps) => {
   const [refreshing, setRefreshing] = useState(false);
   
   const onRefresh = async () => {
@@ -35,7 +35,7 @@ const ProfileScreen = ({ navigation, route }: INavigationProps) => {
     >
       <View className='flex-1 justify-center items-center'>
         <Text className='text-dark text-4xl font-monaExtraBold tracking-widest'>
-          Profile Screen
+          Favorite Screen
         </Text>
         <Text className='text-dark text-2xl font-mona mt-2'>
           This is the main container screen.
@@ -45,4 +45,4 @@ const ProfileScreen = ({ navigation, route }: INavigationProps) => {
   );
 }
 
-export default ProfileScreen;
+export default FavoriteScreen;

@@ -39,7 +39,7 @@ const SignUpScreen = ({ navigation, route }: Props) => {
           </View>
 
           <View className='w-full mt-10'>
-            <Button title='Sign In' onPress={() => console.log('Sign In Pressed')} />
+            <Button title='Sign In' onPress={() => navigation.navigate('MainContainerScreen')} />
 
             <Text className='text-silver text-center font-monaMedium mt-5 mb-5 tracking-wide text-xl tracking-widest'>
               or
@@ -55,7 +55,7 @@ const SignUpScreen = ({ navigation, route }: Props) => {
                       resizeMode='contain'
                     />}
                     onPress={() => console.log('Sign In Pressed')}
-                    style='light'
+                    styleType='light'
                   />
                 </View>
                 
@@ -67,7 +67,7 @@ const SignUpScreen = ({ navigation, route }: Props) => {
                       resizeMode='contain'
                     />}
                     onPress={() => console.log('Sign In Pressed')}
-                    style='light'
+                    styleType='light'
                   />
                 </View>
 
@@ -79,7 +79,7 @@ const SignUpScreen = ({ navigation, route }: Props) => {
                   <Button
                     title='Register' 
                     onPress={() => navigation.navigate('HomeScreen')}
-                    style='link'
+                    styleType='link'
                   />
                 </View>
               </View>

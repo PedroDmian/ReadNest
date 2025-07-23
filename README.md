@@ -1,3 +1,17 @@
+## READNEST
+
+This application allows users to create, share, and discover short stories. Users can write their own stories, read stories from others, and provide feedback through comments and ratings. The goal is to foster a community of writers and readers who can inspire each other through the art of storytelling.
+
+## Screenshots
+
+![Screenshot 1](./._/screen-auth.png)
+![Screenshot 2](./._/screen-home.png)
+![Screenshot 3](./._/screen-preview.png)
+![Screenshot 4](./._/screen-chapters.png)
+![Screenshot 5](./._/screen-details-chapters.png)
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started

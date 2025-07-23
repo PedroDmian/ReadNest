@@ -10,11 +10,15 @@ module.exports = {
     extend: {
       colors: {
         yellow: '#faba06',
+        moonstone: '#40A8BE',
         cadet: '#34384d',
         dark: '#030303',
         eerie: '#1d1d20',
         silver: '#ababab',
         salt: '#f8f8f8',
+        timberwolf: '#D6D6D6',
+        davygray: '#5C5C5C',
+        danger: '#F8285B'
       },
       fontFamily: {
         mona: ['MonaSans-Regular'],
