@@ -94,6 +94,23 @@ const MainContainerScreen = ({ navigation, route }: Props) => {
     }
   };
 
+  const SafeAreaViewRender = ({ children }: { children: React.ReactNode }) => {
+    const contentViewSafeAreaActive = {
+      HomeScreen: true,
+      NotificationsScreen: true,
+      FavoritesScreen: true,
+      ProfileScreen: false,
+    };
+
+    const isSafeAreaActive = contentViewSafeAreaActive[currentScreen as keyof typeof contentViewSafeAreaActive];
+
+    if (!isSafeAreaActive) {
+      return <View className='flex-1'>{children}</View>;
+    }
+
+    return <SafeAreaView className='flex-1 mx-4'>{children}</SafeAreaView>;
+  }
+
   return (
     <View className='flex-1 bg-salt relative'>
       <Image
@@ -102,9 +119,9 @@ const MainContainerScreen = ({ navigation, route }: Props) => {
         resizeMode='stretch'
       />
 
-      <SafeAreaView className='flex-1 mx-4'>
+      <SafeAreaViewRender>
         { renderScreen() }
-      </SafeAreaView>
+      </SafeAreaViewRender>
 
       {animating && (
         <Animated.View style={[

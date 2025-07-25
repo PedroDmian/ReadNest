@@ -21,12 +21,20 @@ module.exports = {
         danger: '#F8285B'
       },
       fontFamily: {
+        monaLight: ['MonaSans-Light'],
         mona: ['MonaSans-Regular'],
         monaExtraBold: ['MonaSans-ExtraBold'],
         monaBold: ['MonaSans-Bold'],
         monaMedium: ['MonaSans-Medium'],
         monaSemi: ['MonaSans-SemiBold'],
-      }
+      },
+      minHeight: {
+        300: '300px',
+        350: '350px',
+        400: '400px',
+        450: '450px',
+        500: '500px',
+      },
     },
   },
   plugins: [],

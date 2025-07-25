@@ -76,7 +76,7 @@ const BookChapters = (
   ]);
 
   return (
-     <View 
+    <View 
       className='relative -top-10 left-0 right-0 w-full p-4 rounded-t-3xl -mb-10'
     >
       <Text className='text-white text-4xl text-center font-monaExtraBold tracking-widest'>

@@ -70,6 +70,11 @@ const Button = ({
       touch: 'bg-transparent',
       text: 'text-dark',
       classNameTouch: classNameTouch ?? ''
+    },
+    border: {
+      touch: 'border border-silver',
+      text: 'text-silver font-monaMedium',
+      classNameTouch: classNameTouch ?? 'py-5 px-5'
     }
   }
 

@@ -67,9 +67,11 @@ const NavBar = ({ currentScreen, setCurrentScreen }: Props) => {
 
       <TouchableOpacity activeOpacity={0.9} key={3} onPress={() => onPress(3, 'ProfileScreen')} className="justify-center items-center p-3">
         <Image
-          source={require("../../assets/images/user-test.jpg")}
+          source={{
+            uri: 'https://images.pexels.com/photos/16231430/pexels-photo-16231430.jpeg'
+          }}
           className="w-14 h-14 rounded-full"
-          resizeMode='stretch'
+          resizeMode='cover'
         />
       </TouchableOpacity>
 
